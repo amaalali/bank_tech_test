@@ -1,11 +1,21 @@
 class Account
   def initialize
-    @balance = 0
     @history = []
   end
 
   def balance
-    @balance
+    if @history.size == 0
+      0
+    else
+      to_sum =  history.map do |transaction|
+                  if transaction.type == "deposit"
+                    transaction.amount
+                  elsif transaction.type == "withdrawal"
+                    -1*transaction.amount
+                  end
+                end
+      to_sum.reduce(:+)
+    end
   end
 
   def history

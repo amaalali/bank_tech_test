@@ -19,6 +19,14 @@ describe Account do
       expect(account.history.size).to eq(1)
       expect(account.history.first.type).to eq('withdrawal')
     end
+  end
 
+  describe 'checking balance' do
+    it 'can make a withdrawal' do
+      account.desposit(1000)
+      account.desposit(2000)
+      account.withdrawal(500)
+      expect(account.balance).to eq(2500)
+    end
   end
 end
