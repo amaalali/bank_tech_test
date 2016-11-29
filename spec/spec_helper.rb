@@ -1,5 +1,5 @@
 # files
-require 'bank'
+require 'account'
 require 'transaction'
 
 
