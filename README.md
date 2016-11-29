@@ -2,10 +2,10 @@
 
 ## Specification
 
-- [ ] Interact with the your code via IRB
+- [x] Interact with the your code via IRB
 - [x] Can make a deposits
 - [x] Can make a withdrawal
-- [ ] Can check balance
+- [x] Can check balance
 - [ ] Can print an account statement
   - [ ] date
   - [ ] amount
