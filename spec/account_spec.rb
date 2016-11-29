@@ -4,9 +4,6 @@ describe Account do
     it 'has inital balance of 0' do
       expect(account.balance).to eq(0)
     end
-    it 'it has an emptry transaction history' do
-      expect(account.history).to eq([])
-    end
   end
 
   describe 'adding transactions' do
@@ -27,6 +24,16 @@ describe Account do
       account.desposit(2000)
       account.withdrawal(500)
       expect(account.balance).to eq(2500)
+    end
+  end
+
+  describe 'prints statement' do
+
+    let(:header)    { 'date       || credit || debit   || balance' }
+
+    it 'print header for account with no history' do
+      expect(STDOUT).to receive(:puts).with(header)
+      account.statement
     end
   end
 end
