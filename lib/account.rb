@@ -11,4 +11,9 @@ class Account
   def history
     @history
   end
+
+  def desposit(amount)
+    transaction = Transaction.new("deposit",amount)
+    @history << transaction
+  end
 end
