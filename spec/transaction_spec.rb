@@ -12,5 +12,10 @@ describe Transaction do
       test_transaction = Transaction.new("deposit", 1)
       expect(test_transaction.amount).to eq(1)
     end
+    it 'transaction date set' do
+      transaction_date = Time.new.strftime("%d/%m/%Y")
+      test_transaction = Transaction.new("deposit", 1)
+      expect(test_transaction.date).to eq(transaction_date)
+    end
   end
 end
