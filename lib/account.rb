@@ -16,4 +16,9 @@ class Account
     transaction = Transaction.new("deposit",amount)
     @history << transaction
   end
+
+  def withdrawal(amount)
+    transaction = Transaction.new("withdrawal",amount)
+    @history << transaction
+  end
 end

@@ -10,10 +10,15 @@ describe Account do
   end
 
   describe 'adding transactions' do
-    it 'can add a deposit' do
+    it 'can make a deposit' do
       account.desposit(1)
-      expect(account.history.size).to eq(1)
       expect(account.history.first.type).to eq('deposit')
     end
+    it 'can make a withdrawal' do
+      account.withdrawal(1)
+      expect(account.history.size).to eq(1)
+      expect(account.history.first.type).to eq('withdrawal')
+    end
+
   end
 end
