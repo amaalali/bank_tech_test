@@ -4,18 +4,15 @@ class Account
   end
 
   def balance
-    if @history.size == 0
-      0
-    else
-      to_sum =  history.map do |transaction|
-                  if transaction.type == "deposit"
-                    transaction.amount
-                  elsif transaction.type == "withdrawal"
-                    -1*transaction.amount
-                  end
+    return 0 if @history.size == 0
+    to_sum =  history.map do |transaction|
+                if transaction.type == "deposit"
+                  transaction.amount
+                elsif transaction.type == "withdrawal"
+                  -1*transaction.amount
                 end
-      to_sum.reduce(:+)
-    end
+              end
+    to_sum.reduce(:+)
   end
 
   def history
