@@ -6,10 +6,10 @@
 - [x] Can make a deposits
 - [x] Can make a withdrawal
 - [x] Can check balance
-- [ ] Can print an account statement
-  - [ ] date
-  - [ ] amount
-  - [ ] balance
+- [x] Can print an account statement
+  - [x] date
+  - [x] amount
+  - [x] balance
 
 ## Acceptance criteria
 
@@ -25,7 +25,30 @@ date       || credit || debit   || balance
 ## Instructions
 
 ### Installation
-Via **Command line** instructions
 
+1. Download the folder as a `zip` and unzip or clone the repo.
+2. Install `ruby` if not installed. Also for runnning the tests you will need `rspec` which can be installed in one of the following ways:
+  1. Install the gem directly using `gem install rspec`.
+  2. **OR** Using Bundler run `bundle install`
 
 ### Usage
+#### In the command line
+
+1. `cd` into the root of the downloaded folder.
+2. Start **irb**
+3. Type: `require './load_files.rb'`
+4. Carry out out your transactions!
+
+##### Irb Commands
+
+| Action         | Command                           |
+|----------------|-----------------------------------|
+| Create account | `account_name = Account.new`      |
+| Deposit money  | `account_name.deposit(amount)`    |
+| Withdraw money | `account_name.withdrawal(amount)` |
+| Print Statement| `account_name.statement`          |
+
+
+#### Verifying the acceptance criteria
+1. `cd` into the root of the downloaded folder.
+2. `ruby acceptance_criteria.rb`
